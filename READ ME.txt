@@ -1,0 +1,9 @@
+*****************************************************************
+version 1.0.3
+Date 8-31-2023
+
+CHANGE LOG
+- BOARD NUMBER SETTEBLE FOR BOTH EQUALZIER AND BMS
+- LANGUAGE SUPPORT ADDED
+
+****************************************************************
