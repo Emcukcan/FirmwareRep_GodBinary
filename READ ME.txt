@@ -6,7 +6,6 @@ CHANGE LOG
 - BOARD NUMBER SETTEBLE FOR BOTH EQUALZIER AND BMS
 - LANGUAGE SUPPORT ADDED
 #
-
 *****************************************************************
 version 1.0.4
 Date 8-31-2023
@@ -14,5 +13,12 @@ Date 8-31-2023
 CHANGE LOG
 - BOARD NUMBER BUG IS RESOLVED
 - CANBUS TASK IS ADDED
+#
+****************************************************************
+version 1.0.5
+Date 8-31-2023
+
+CHANGE LOG
+- BMS ALARM WILL AWAKE ALL THE BREAKERS
 #
 ****************************************************************
