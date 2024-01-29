@@ -226,6 +226,7 @@ Firmware Version: 3.0.3
 **************************************************************
 
 
+
 Revision Date: 14/12/2023
 Firmware Version: 3.0.4
 
@@ -234,6 +235,18 @@ Firmware Version: 3.0.4
 
 -Brightness controll modified for container.
 
+
+**************************************************************
+
+
+
+Revision Date: 29/1/2024
+Firmware Version: 3.0.8
+
+
+**UPDATE LOG**
+
+-32 cell support is added 
 
 
 
