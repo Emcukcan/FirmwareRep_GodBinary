@@ -248,6 +248,20 @@ Firmware Version: 3.0.8
 
 -32 cell support is added 
 
+**************************************************************
+
+
+
+Revision Date: 23/2/2024
+Firmware Version: 3.0.9
+
+
+**UPDATE LOG**
+
+- Multi Language support
+- Inverter options are added to UI
+
+
 
 
 
