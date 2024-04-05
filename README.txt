@@ -260,6 +260,34 @@ Firmware Version: 3.0.9
 
 - Multi Language support
 - Inverter options are added to UI
+**************************************************************
+
+
+
+Revision Date: 8/3/2024
+Firmware Version: 3.1.0
+
+
+**UPDATE LOG**
+
+- Online Monitoring Mode, SD card memory leak and firebase memory leak is solved
+
+
+**************************************************************
+
+
+
+Revision Date: 1/4/2024
+Firmware Version: 3.1.2
+
+
+**UPDATE LOG**
+
+- Cell Monitoring page is updated for 16 cell modules
+- German language option is updated
+- Simulation modes are added.
+
+
 
 
 
