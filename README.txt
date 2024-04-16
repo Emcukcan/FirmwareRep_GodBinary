@@ -287,6 +287,19 @@ Firmware Version: 3.1.2
 - German language option is updated
 - Simulation modes are added.
 
+**************************************************************
+
+
+
+Revision Date: 16/4/2024
+Firmware Version: 3.1.3
+
+
+**UPDATE LOG**
+
+- SSL certificate of binary server is solved !!
+https://www.youtube.com/watch?v=cBa87N_BZ4s
+https://www.esp32.com/viewtopic.php?f=13&t=26076
 
 
 
