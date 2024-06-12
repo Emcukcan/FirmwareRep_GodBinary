@@ -302,6 +302,41 @@ https://www.youtube.com/watch?v=cBa87N_BZ4s
 https://www.esp32.com/viewtopic.php?f=13&t=26076
 
 
+**************************************************************
+
+
+
+Revision Date: 18/4/2024
+Firmware Version: 3.1.4
+
+
+**UPDATE LOG**
+
+- Customer spesific firmware version is added in into firmware
+
+**************************************************************
+
+
+
+Revision Date: 20/4/2024
+Firmware Version: 3.1.5
+
+
+**UPDATE LOG**
+
+- Customer spesific firmware version is added in into firmware
+**************************************************************
+
+
+
+Revision Date: 01/5/2024
+Firmware Version: 3.1.6
+
+
+**UPDATE LOG**
+
+- Customer spesific firmware version is added in into firmware
+
 
 
 
