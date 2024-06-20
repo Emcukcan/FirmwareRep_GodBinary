@@ -336,8 +336,16 @@ Firmware Version: 3.1.6
 **UPDATE LOG**
 
 - Customer spesific firmware version is added in into firmware
+**************************************************************
 
 
 
+Revision Date: 20/6/2024
+Firmware Version: 3.1.7
 
+
+**UPDATE LOG**
+
+- ENSEGA Firmware and ENCAP LCD module is merged.
+- ENSEGA Serial number is modified.
 
