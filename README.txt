@@ -336,6 +336,9 @@ Firmware Version: 3.1.6
 **UPDATE LOG**
 
 - Customer spesific firmware version is added in into firmware
+
+
+
 **************************************************************
 
 
@@ -346,6 +349,33 @@ Firmware Version: 3.1.7
 
 **UPDATE LOG**
 
-- ENSEGA Firmware and ENCAP LCD module is merged.
-- ENSEGA Serial number is modified.
+- Customer spesific firmware version is added in into firmware
+
+
+**************************************************************
+
+
+
+Revision Date: 28/6/2024
+Firmware Version: 3.1.8
+
+
+**UPDATE LOG**
+
+- Customer spesific firmware version is added in into firmware (ENSIRIUS - ACTUATED BREAKER)
+
+
+**************************************************************
+
+
+
+Revision Date: 7/2/2024
+Firmware Version: 3.1.9
+
+
+**UPDATE LOG**
+
+- Customer spesific firmware version is added in into firmware (ENLIGHT ECM)
+
+
 
