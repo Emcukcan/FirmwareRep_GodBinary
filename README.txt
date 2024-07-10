@@ -377,5 +377,31 @@ Firmware Version: 3.1.9
 
 - Customer spesific firmware version is added in into firmware (ENLIGHT ECM)
 
+**************************************************************
+
+
+
+Revision Date: 7/4/2024
+Firmware Version: 3.2.0
+
+
+**UPDATE LOG**
+
+- Customer spesific firmware version is added in into 
+(ENSIRIUS  with actuated breaker)
+
+
+**************************************************************
+
+
+
+Revision Date: 7/10/2024
+Firmware Version: 3.2.1
+
+
+**UPDATE LOG**
+
+- Time & Date bug is resolved
+
 
 
