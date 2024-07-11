@@ -403,5 +403,17 @@ Firmware Version: 3.2.1
 
 - Time & Date bug is resolved
 
+**************************************************************
+
+
+
+Revision Date: 7/11/2024
+Firmware Version: 3.2.2
+
+
+**UPDATE LOG**
+
+- get_time() related bug is resolved
+
 
 
