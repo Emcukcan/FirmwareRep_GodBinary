@@ -1,17 +1,4 @@
-//15----20 RTC Time
-//25----30 SD Card Open
-//31----35 CANBUS  Open
-//45----48 SD Card Close
-//50----55 Firebase Open
-
-
-
-
-
-
-
-
-
+//7-24-2024
 
 
 bool AlarmLogOperation = false;
@@ -486,12 +473,6 @@ int indexINVERTERSArray = 0;
 int indexCOMMArray = 0;
 bool SetInverterComm = false;
 
-
-
-
-
-
-
 ////////////////////
 
 #include <Wire.h>
@@ -514,17 +495,9 @@ TFT_eSprite PageFrame = TFT_eSprite(&tft);
 TFT_eSprite ContentFrame = TFT_eSprite(&tft);
 TFT_eSprite BannerFrame = TFT_eSprite(&tft);
 
-
-//TFT_eSprite GraphBackDrop = TFT_eSprite(&tft);
-//TFT_eSprite GraphDrawing = TFT_eSprite(&tft);
-
-
-
 TFT_eSprite Icon1 = TFT_eSprite(&tft);
 TFT_eSprite Icon2 = TFT_eSprite(&tft);
 TFT_eSprite Animation = TFT_eSprite(&tft);
-
-
 
 
 TFT_eSprite BannerIconLeft = TFT_eSprite(&tft);
@@ -586,17 +559,13 @@ float SUMLOW = 57;
 float SOCLOW = 0;
 float SOCHI = 100;
 
+
 String AlarmArray[28] = {"Cell High 1", "CellHigh 2", "CellLow 1", "CellLow2", "Sum High 1", "SumHigh2", "Sum Low 1", "SumLow2",
-                         "Chg.Temp.High", "Chg.Temp.High", "Chg.Temp.Low", "Chg.Temp.Low", "Disch.Temp.High", "Disch.Temp.High",
-                         "Disch.Temp.Low", "Disch.Temp.Low",
-                         "Chg.O.Curr.", "Chg.O.Curr.", "Disch.O.Curr.", "Disch.O.Curr.", "ModuleFull", "ModuleFull", "SOCLow", "SOCLow",
-                         "Diff.Voltage", "Diff.Voltage", "Diff.Temp.", "Diff.Temp."
+                         "Chg.Temp.High1", "Chg.Temp.High2", "Chg.Temp.Low1", "Chg.Temp.Low2", "Disch.Temp.High1", "Disch.Temp.High2",
+                         "Disch.Temp.Low1", "Disch.Temp.Low2",
+                         "Chg.O.Curr.1", "Chg.O.Curr.2", "Disch.O.Curr.1", "Disch.O.Curr.2", "ModuleFull1", "ModuleFull2", "SOCLow1", "SOCLow2",
+                         "Diff.Voltage1", "Diff.Voltage2", "Diff.Temp.1", "Diff.Temp.2"
                         };
-
-
-
-
-
 
 float MaxTemp1 = 0;
 float MaxTemp2 = 0;
@@ -784,15 +753,13 @@ int UDP_COMMAND_INDEX = -1;
 //GITHUB UPDATE
 
 String FirmwareVer = {
-  "3.2.2"  //7-11-2024
+  "3.2.5"  //8-9-2024
 };
 
 
 bool UpdateAvailable = false;
 bool IPReady = true;
 bool CoordinatesReady = true;
-
-
 
 //asas
 String Languages[5][200] =
@@ -803,10 +770,6 @@ String Languages[5][200] =
   {"Pret", "Nouvelle mise a jour du firmware", "Initialisation", "Tension de Terme.", "Courant de Terme.", "Cell. Max.", "Cell Min.", "Diff. Max.", "Temp. de Terme.", "Energie de Charge", "Energie de Dech", "Heure Systeme", "Date Systeme", "Alarmes Systeme", "Mode Systeme", "Temp. Cell. #1", "Temp. Cell. #2", "SOC", "Dech", "Charge", "ET.", "ALL.", "Principal", "Tab. Bord.", "Reseau", "Parametres", "Quotidien", "Statistiques", "Cellule", "Surveil.", "Sec", "Contacts", "Systeme", "Parametres", "Adresse IP", "Numero de Port", "Protocole de Comm.", "SSID", "Adresse MAC", "Oublier le Reseau", "Tension Maximale", "Tension Minimale", "Courant Maximal", "Courant Minimal", "Temp. Max. #1", "Temp. Max. #2", "Reinitialiser les Statistiques", "Cell. Max.", "Cell. Min.", "Cell. Moy.", "Contacts", "Types", "Operation", "Activer", "Desact", "Result", "Courant Eleve (Dech)", "Courant Eleve (Charge)", "Tension Elevee (Somme)", "Tension Faible (Somme)", "Tension Elevee (Cell.)", "Tension Faible (Cell.)", "Temp. Elevee (Charge)", "Temp. Elevee (Dech)", "En Ligne", "Surveil.", "Wifi Direct", "Surveil.", "Bluetooth", "Surveil.", "Redemarrer", "Module", "Firmware", "Mise a Jour", "Produit", "Manuel", "Manuel du Produit", "Config.", "Mise en Pl.", "Alarme", "Enreg.", "Surveil.", "QR", "Config. Sec.", "Contacts", "Systeme", "Statistiques", "Buzzer BMS", "Securite Terminale", "CONFIGURER l'ID CAN", "LIRE l'ID CAN", "CONFIGURER l'ID CAN", "Choisir la Langue", "Type d'Alarme", "Temps d'Enregistrement", "Wifi Direct", "Surveil.", "Nom du Contact", "Etat du Contact", "Valeur d'Activation", "Valeur de Desactivation", "Type de Contact", "Sauvegarder la Configuration", "Energ. Total. Charg.", "Energ. Total. Dech.", "Lect. Cour. Plus Elev.", "Lect. Cour. Plus Faib.", "Temps Fonc.", "Num. Ser. Princ.", "Numero de Serie BMU :", "Veuillez deconnecter la charge ou la source pour activer la securite", "La Surveil. en Ligne est activee", "La Surveil. Wifi Direct est activee", "Le Systeme va redemarrer dans 2 secondes", "La mise a jour du firmware est activee", "Le Code QR est genere pour le fichier PDF de Sirius ENCAP TDS", "La Surveil. Bluetooth est activee", "Page du Tab. Bord.", "Page des Cellules du Module", "Page des Parametres Reseau", "Page des Contacts Secs", "Page des Statistiques Quot", "Page de Configuration du Systeme", "La Securite est activee", "La Securite est Desacte", "Le Buzzer est mis en sourdine", "Le Buzzer est active", "Page des Alarmes Enregistrees", "Le Module est interroge", "Scanner le code-barres pour la Surveil.", "Configurer les Contacts Secs", "Les Contacts Secs sont sauvegardes", "Scanner le code-barres pour la Surveil.", "Le Pave Numerique est ouvert pour l'ID CAN", "Statistiques Completes du Systeme", "Configuration de l'ID CAN", "Veuillez choisir la langue preferee", "Langue choisie :", "Les Mosfets s'allument automatiquement apres un delai d'attente", "Le Firmware est en cours de mise a jour", "Veuillez patienter.", "Numero de Serie :", "Version du Firmware :", "Minute", "Tension Quot (V)", "Max", "Min", "Tmp", "Energie de Charge Quot (W)", "Energie de Dech Quot (W)", "Temperature Quot (C)", "Choisir ", "Onduleur", "Ens. Marque D'onduleur", "Ens. Comm. Type", "Lire Marque D'onduleur", "Lire Comm. Type", "CONFIG.COMM.", "Set ", "Simulation", "Memory (kb)", "No", "Time", "Event", "Voltage", "Current", "SOC", "Temp", "MaxCell", "MinCell"}
 };
 
-
-
-
-
 #define URL_fw_Version  "https://raw.githubusercontent.com/Emcukcan/FirmwareRep_GodBinary/master/bin_version.txt"
 #define URL_fw_Bin  "https://raw.githubusercontent.com/Emcukcan/FirmwareRep_GodBinary/master/fw.bin"
 String CellValuesSentence = "";
@@ -815,16 +778,9 @@ int Dryindex = 0;
 
 void setup() {
 
-
-
   Serial.begin(9600);
   while (!Serial) continue;
   Serial.setTimeout(250);
-  //  Serial.println("started");
-  //  for (int i = 0; i < 200; i++) {
-  //    Serial.println(String(i) + ": " + Languages[0][i]);
-  //  }
-  //  Serial.println("finished");
 
   tft.init();
   tft.setRotation(1);
@@ -849,10 +805,6 @@ void setup() {
   delay(10);
   RTC.begin(&I2C_0);
 
-
-
-
-
   //setup sd
   spi_class_begin();
   delay(10);
@@ -862,10 +814,6 @@ void setup() {
   //  CAN.setSPI(hspi);
 
   delay(100);
-
-
-
-
 
   //Backlight
   ledcSetup(ledChannel, freq, resolution);
@@ -899,22 +847,11 @@ void setup() {
   int ASI = AS.toInt();
 
 
-  Serial.println(SerialNumber);
-  Serial.println(AS);
-  Serial.println(ASI);
-  Serial.println(ASY);
-  Serial.println(ASY.length());
-
-
-  Serial.println(ASY == "KWL02048V034300024A000" );
-  Serial.println(ASI < 45);
-
   if (SerialNumber.indexOf("SIM") != -1) {
     SimMode = true;   //SIM
     SimCell = SerialNumber.substring(SerialNumber.indexOf("SIM") + 3, SerialNumber.indexOf("SIM") + 5).toInt();
     SimVolt = SerialNumber.substring(SerialNumber.indexOf("SIM") - 2, SerialNumber.indexOf("SIM")).toInt();
-    Serial.println("SimCell:" + String(SimCell));
-    Serial.println("SimVolt:" + String(SimVolt));
+
   }
   else {
     SimMode = false;
@@ -926,7 +863,6 @@ void setup() {
     //GERMANY MODULES TRICK
     full_output = 1;
     set_gpio();
-
     Serial.println("germany is active");
   }
   else {
@@ -957,11 +893,6 @@ void setup() {
     FirmwareVer = "3.0.0";   //STANDARD ETISLAT trick for firmware version
   }
 
-
-
-
-
-
   if (SerialNumber.substring(0, 2) == "ES") {
     CompanyMod = 3;   //ENSIRIUS
   }
@@ -989,8 +920,6 @@ void setup() {
     CompanyMod = 3 ;  //ENSIRIUS
 
   }
-
-
   else if (SerialNumber.substring(0, 3) == "KWL") {
     CompanyMod = 5;   //ENSIRIUS
 
@@ -1004,25 +933,10 @@ void setup() {
     CompanyMod = 8 ;  //Containerized ENWALL
   }
 
-
-
-
-
-
-
-
   else {
     CompanyMod = 2;   //ENCAP
   }
-  //  Serial.println(CompanyMod);
-  //  Serial.println(SerialNumber.substring(0, 4));
 
-  //  Serial.println("Statics are fetched");
-  //  Serial.println("Max Permanent Current:" + String(MaxCurrentP));
-  //  Serial.println("Min Permanent Current:" + String(MinCurrentP));
-  //
-  //  Serial.println("timeoffset:");
-  //  Serial.println(timeoffset);
 
   restartCounter = preferences.getInt("RC", 0);
   UpdateNextRestart = preferences.getBool("UNR", false);
@@ -1031,11 +945,7 @@ void setup() {
   BTNextRestart = preferences.getBool("BTNR", true);
   UDPNextRestart = preferences.getBool("UDPNR", false);
 
-  //  Serial.print("Restart Counter:");
-  //  Serial.println(restartCounter);
-
   Safety = preferences.getBool("Safety", false);
-
 
   DRYA = preferences.getString("DRYA", "0/0/0/0/0/");
   DRYB = preferences.getString("DRYB", "0/0/0/0/0/");
@@ -1099,8 +1009,6 @@ void setup() {
 
   // SerialNumber = preferences.getString("SerialNumber", "ENC10482000001");
 
-
-
   if (!full_output) {
     if (!mute) {
       for (int i = 0; i < 10; i++) {
@@ -1111,9 +1019,6 @@ void setup() {
       }
     }
   }
-
-
-
 
   if (!UpdateNextRestart) {
     //CREATING TASK FOR BMS_____________________________________________________________________________________________________
@@ -1185,9 +1090,6 @@ void setup() {
       1);          /* pin task to core 0 */
     delay(50);
   }
-
-
-
 
   drawLandingPage();
   landingDone = true;
@@ -1297,32 +1199,6 @@ void SDCANBUS_CODE( void * pvParameters ) {
     }
   }
 
-
-
-
-
-  //  for (int i = 0; i < 5; i++) {
-  //
-  //    if (CAN_OK == CAN.begin(CAN_500KBPS, MCP_8MHz)) {
-  //      Serial.println("");
-  //      Serial.println("CAN BUS init ok!.....................................");
-  //      Serial.println("");
-  //      canbusReady = true;
-  //      delay(100);
-  //      break;
-  //    }
-  //    else {
-  //      Serial.println("");
-  //      Serial.println("CAN BUS init fail.............................");
-  //      Serial.println("");
-  //      canbusReady = false;
-  //      delay(100);
-  //    }
-  //  }
-
-
-
-
   for (;;) {
 
     if (WDNextRestart || FBNextRestart) {
@@ -1404,46 +1280,7 @@ void SDCANBUS_CODE( void * pvParameters ) {
       //  Serial.println(ceil(OpSec));
 
     }
-
-
     int a = OpSec;
-    //    if ( canbusReady == true && !(ceil(OpSec) >= 20 && ceil(OpSec) < 30) ) {
-    //      //Serial.println("CANBUS WORKED");
-    //
-    //      if (BMS.SOC * 0.1 < 80 && BMS.SOC * 0.1 > 30) {
-    //        can_send_charge(55 , 200, 200);
-    //
-    //      }
-    //      else if (BMS.SOC * 0.1 > 80 && BMS.SOC * 0.1 < 90)
-    //      {
-    //        can_send_charge(55 , 100, 200);
-    //      }
-    //      else if (BMS.SOC * 0.1 > 90)
-    //      {
-    //        can_send_charge(55 , 20, 200);
-    //      }
-    //      else if (BMS.SOC * 0.1 < 30 && BMS.SOC * 0.1 > 20)
-    //      {
-    //        can_send_charge(55 , 200, 100);
-    //      }
-    //
-    //      else if (BMS.SOC * 0.1 < 20)
-    //      {
-    //        // can_send_charge(55 , 200, 20);
-    //      }
-    //
-    //      can_send_soc(BMS.SOC * 0.1 , BMS.SOC * 0.1);
-    //      // Serial.println(read_can(),HEX);
-    //      can_send_total_volt(BMS.sum_voltage * 0.1, (BMS.current - 30000) * 0.1, BMS.max_cell_temp - 40);
-    //      can_send_request(1, 1 , 0, 0, 0);
-    //      can_send_alarm(alarmsr) ;
-    //      // Serial.println(read_can(), HEX);
-    //      /////////////////////
-    //
-    //    }
-
-
-
     delay(500);
 
 
@@ -1556,7 +1393,7 @@ void SDCANBUS_CODE( void * pvParameters ) {
 
 
 
-        //klkl
+
 
 
 
@@ -1641,16 +1478,8 @@ void SDCANBUS_CODE( void * pvParameters ) {
             HourlyChargeEnergy = 0;
           }
 
-
-
           if (control_sd ) {
-
             delay(250);
-
-
-
-
-
             if ((FBNextRestart || BTNextRestart)) {
               Serial.println("----------------------SD Closed--------------");
               SD.end();
@@ -1660,27 +1489,15 @@ void SDCANBUS_CODE( void * pvParameters ) {
                 SD.end();
               }
             }
-
-
-
-            //
           }
           else {
             Serial.println("System is waiting for SD.................................");
           }
-
-
-
-
-
         }
         else {
-          //Serial.println("Main Log is waiting for RTC.....................................");
-          // Serial.println("Year:" + String(rtc.years));
+          Serial.println("Main Log is waiting for RTC.....................................");
+          Serial.println("Year:" + String(rtc.years));
         }
-
-
-
         // Statistical Measurements Done/////////////////
       }
 
@@ -1695,11 +1512,6 @@ void SDCANBUS_CODE( void * pvParameters ) {
       SDReset = false;
       Serial.println("SD Card files deleted!!!!!!!!!!!");
     }
-
-
-
-
-
 
 
     if (landingDone) {
@@ -1752,9 +1564,6 @@ void SDCANBUS_CODE( void * pvParameters ) {
   }
 
 }
-
-
-
 
 
 void ENCONNECT_CODE( void * pvParameters ) {
@@ -1879,9 +1688,6 @@ void BT_CODE( void * pvParameters ) {
       }///////////////////////////////////////////////
 
 
-
-
-
       //SET energy records////////////////////////////////
       param_start2 = message.indexOf("SETCHARGE");
       param_end2 = message.indexOf("/");
@@ -1904,14 +1710,6 @@ void BT_CODE( void * pvParameters ) {
         SerialBT.println(SetDischarge);
         SetEnergies = true;
       }///////////////////////////////////////////////
-
-
-
-
-
-
-
-
 
       //RESET ALARMS RECORDS////////////////////////////////
       param_start = message.indexOf("RESETALARM");
@@ -1985,24 +1783,6 @@ void BT_CODE( void * pvParameters ) {
 
       }///////////////////////////////////////////////
 
-
-
-      //      //SET COMPANY MODE////////////////////////////////
-      //      param_start = message.indexOf("COMPANYMOD");
-      //      param_end = message.indexOf("#");
-      //      if (param_start != -1 && param_end != -1) {
-      //
-      //        BTProcessor = message.substring(param_start + 10, param_end);
-      //        CompanyMod = BTProcessor.toInt();
-      //        Serial.println(CompanyMod);
-      //
-      //        SerialBT.println("company mode is setted");
-      //        message = "";
-      //
-      //      }///////////////////////////////////////////////
-
-
-
       //SET cell MODE////////////////////////////////
       param_start = message.indexOf("CELLMOD");
       param_end = message.indexOf("#");
@@ -2053,9 +1833,6 @@ void BT_CODE( void * pvParameters ) {
 
 
       }///////////////////////////////////////////////
-
-
-
 
 
       //STARTUP TRIGGER////////////////////////////////
@@ -2581,7 +2358,7 @@ void BT_CODE( void * pvParameters ) {
       param_end = message.indexOf("#");
       if (param_start != -1 && param_end != -1) {
         SerialBT.println(SerialNumber);
-        Serial.println("Serial number is requested");
+        // Serial.println("Serial number is requested");
         message = "";
       }///////////////////////////////////////////////
 
@@ -2593,24 +2370,6 @@ void BT_CODE( void * pvParameters ) {
         message = "";
       }///////////////////////////////////////////////
 
-
-      //      //GET MEAS BMS////////////////////////////////
-      //      param_start = message.indexOf("GET_MEAS");
-      //      param_end = message.indexOf("#");
-      //      if (param_start != -1 && param_end != -1) {
-      //
-      //        Serial.println("Measurements are requested");
-      //
-      //        String MEAS = "TV" + String(BMS.sum_voltage * 0.1) +  "/TC" + String((BMS.current - 30000) * 0.1) + "/SOC" +  String(BMS.SOC * 0.1) + "/TEMP" +  String(BMS.max_cell_temp - 40) +
-      //                      "/MAX" + String(BMS.max_cell_volt * 0.001) + "/MIN" + String(BMS. min_cell_volt * 0.001) +  "/STT" + String(BMS.state) +
-      //                      "/CH" + String(BMS.charge) + "/DSH" + String(BMS.discharge) + "/LF" + String(BMS.bms_life) +
-      //                      "/RC" + String(BMS.rem_cap) + "/BL" + String(balancerState) + "/CHE" + String(ChargeEnergy, 3) + "/DHE" + String(DischargeEnergy) + "/TM" + TimeString + "/DT" + DateString + "/FW" + FirmwareVer + "/DA" + String(DRY_VALUES[0]) + "/DB" + String(DRY_VALUES[1]) + "/DC" + String(DRY_VALUES[2]) + "/DD" + String(DRY_VALUES[3]) + "/SF" + String(Safety) + "/#";
-      //
-      //        SerialBT.println(MEAS);
-      //        message = "";
-      //      }///////////////////////////////////////////////
-
-
       //GET MEAS1 BMS////////////////////////////////
       param_start = message.indexOf("GET_MEAS1");
       param_end = message.indexOf("#");
@@ -2618,10 +2377,6 @@ void BT_CODE( void * pvParameters ) {
 
 
         String MEAS1;
-
-
-        Serial.println("Measurements1 are requested");
-
 
 
         if (SimMode) {
@@ -2638,13 +2393,6 @@ void BT_CODE( void * pvParameters ) {
                   "/RC" + String(BMS.rem_cap);
         }
 
-
-
-
-
-
-
-
         SerialBT.println(MEAS1);
         message = "";
       }///////////////////////////////////////////////
@@ -2654,7 +2402,7 @@ void BT_CODE( void * pvParameters ) {
       param_end = message.indexOf("#");
       if (param_start != -1 && param_end != -1) {
 
-        Serial.println("Measurements2 are requested");
+        //Serial.println("Measurements2 are requested");
         String MEAS2;
 
 
@@ -2726,10 +2474,6 @@ void BT_CODE( void * pvParameters ) {
                         "SOCHI" + String(BMS.SOC_high2) + "/" +  "SOCLO" + String(BMS.SOC_low2) + "/" +  "VOLTDIF" + String(BMS.volt_diff2) + "/" +  "SYSCAP" + String(BMS.rem_cap * 0.001 * 0.001 * 48) + "/" +
                         "SLPTM" + String(BMS.secondsleepbm) + "/" + "SLPTMEQU" + String(BMS.secondsleepbm) +   "/";
 
-        //BMS.rated_cap
-
-
-
         LIMITS = "LIMITS" + LIMITS + "#";
         SerialBT.println(LIMITS);
         message = "";
@@ -2754,9 +2498,6 @@ void BMS_COMM_CODE( void * pvParameters ) {
   //ReadAllParameters = true;
   for (;;) {
 
-
-
-
     if (readCANID == false) {
       readCANID = true;
       for (int i = 0; i < 10; i++) {
@@ -2768,10 +2509,6 @@ void BMS_COMM_CODE( void * pvParameters ) {
       }
       delay(1);
     }
-
-
-
-
 
     currentMillisBMS = millis();
     if ((currentMillisBMS - previousMillisBMS) >= intervalBMS && (!HCC_HCD) && (!SLP_CAL) && (!HVC_LVC)  && (!HTC_HTD) && (!RC_RV) && (!pinged)
@@ -2817,28 +2554,19 @@ void BMS_COMM_CODE( void * pvParameters ) {
       }
 
 
-
-
-
       TimeString = calibratedHour + ":" + calibratedMinute;
       DateString = String(rtc.days) + "/" + String(rtc.months) + "/" + String(rtc.years);
 
-
-
       //SERVICE DETECTION
-      if (BMS.current != 0) {
-        if (((BMS.current - 30000) * 0.1 > 2 && !BMS.charge) || ((BMS.current - 30000) * 0.1 < -2 && !BMS.discharge)) {
 
-          service = true;
-          // Serial.println("Please contact service");
-        }
-        else {
-          service = false;
-        }
+      if (((BMS.current - 30000) * 0.1 > 2 && !BMS.charge) || ((BMS.current - 30000) * 0.1 < -2 && !BMS.discharge)) {
+
+        service = true;
+        // Serial.println("Please contact service");
       }
-
-
-
+      else {
+        service = false;
+      }
 
 
       //recovery
@@ -3103,7 +2831,7 @@ void BMS_COMM_CODE( void * pvParameters ) {
         case 3:  // soc
           if (DRYB_ARRAY[1].toInt() == 0) { //<=
 
-            Serial.println("DRY B has  <=soc RULE-------------------------------------------");
+            // Serial.println("DRY B has  <=soc RULE-------------------------------------------");
 
             if (BMS.SOC * 0.1 <= DRYB_ARRAY[2].toFloat()) {
               //  Serial.println("Dry contact A is enabled ");
@@ -3208,11 +2936,11 @@ void BMS_COMM_CODE( void * pvParameters ) {
           if (DRYC_ARRAY[1].toInt() == 0) { //<=
 
             if (abs((BMS.current - 30000 ) * 0.1) <= DRYC_ARRAY[2].toFloat()) {
-              Serial.println("Dry contact C high current enabled ");
+              // Serial.println("Dry contact C high current enabled ");
               DRY_VALUES[2] = 1;
             }
             else if (abs((BMS.current - 30000) * 0.1) > DRYC_ARRAY[3].toFloat()) {
-              Serial.println("Dry contact C high current disabled ");
+              // Serial.println("Dry contact C high current disabled ");
               DRY_VALUES[2] = 0;
             }
           }
@@ -3526,23 +3254,38 @@ void BMS_COMM_CODE( void * pvParameters ) {
       if (full_output == 1) {
 
         if (!Safety) {
-          gpio_out_on_a(1);
-          gpio_out_on_a(2);
-          //  Serial.println("GPIO#1 & GPIO#2 is ON");
+
+          if (BMS.charge) {
+            gpio_out_on_a(1);
+            Serial.println("GPIO#1 is ON");
+          }
+          else {
+            gpio_out_off_a(1);
+            Serial.println("GPIO#1 is OFF");
+          }
+
+          if (BMS.discharge) {
+            gpio_out_on_a(2);
+            Serial.println("GPIO#2 is ON");
+          }
+          else {
+            gpio_out_off_a(2);
+            Serial.println("GPIO#2 is OFF");
+          }
         }
         else {
           gpio_out_off_a(1);
           gpio_out_off_a(2);
-          //  Serial.println("GPIO#1 & GPIO#2 is OFF");
+          Serial.println("GPIO#1 & GPIO#2 is OFF (Safety)");
         }
 
         if (SleepCounter < 57 || DontSleep == true) {
           gpio_out_on_a(3);
-          //  Serial.println("GPIO #3 is ON");
+          Serial.println("GPIO #3 is ON");
         }
         else if (SleepCounter > 58) {
           gpio_out_off_a(3);
-          // Serial.println("GPIO #3 is OFF");
+          Serial.println("GPIO #3 is OFF");
         }
       }
       else {
@@ -3556,28 +3299,29 @@ void BMS_COMM_CODE( void * pvParameters ) {
 
 
       //Serial.println("BMS PARAMETER STARTED");
-      //EQUALIZER
-      //      EQUON = (BMS.current - 30000) <= 0;
 
-      // Serial.println("BMS started:" + String(millis()));
       getBatteryParameters();
-      //  Serial.println("BMS ended:" + String(millis()));
-
 
       for (int i = 0; i < 28; i++) {
 
-        if (BMS.error[i] && (i != 0) && (i != 2) && (i != 4) && (i != 6)) {
+        if (BMS.error[i] && (i != 0) && (i != 2) && (i != 4) && (i != 6) & (i != 20) & (i != 21)) {
           AlarmStringLog = AlarmArray[i] + " _Time:" + TimeString + " " + DateString;
+          //String AlarmArray[28] = {"Cell High 1", "CellHigh 2", "CellLow 1", "CellLow2", "Sum High 1", "SumHigh2", "Sum Low 1", "SumLow2",
+          //                         "Chg.Temp.High1", "Chg.Temp.High2", "Chg.Temp.Low1", "Chg.Temp.Low2", "Disch.Temp.High1", "Disch.Temp.High2",
+          //                         "Disch.Temp.Low1", "Disch.Temp.Low2",
+          //                         "Chg.O.Curr.1", "Chg.O.Curr.2", "Disch.O.Curr.1", "Disch.O.Curr.2", "ModuleFull1", "ModuleFull2", "SOCLow1", "SOCLow2",
+          //                         "Diff.Voltage1", "Diff.Voltage2", "Diff.Temp.1", "Diff.Temp.2"
+          //                        };
+
           DontSleep = true;
-          // Serial.println("Do not sleep is active");
+
+          // Seral.println("Do not sleep is active");
           break;
         }
         else {
           DontSleep = false;
         }
       }
-
-      // EQUOFF = (BMS.current - 30000) > 0;
 
       //GET BALANCER STATE
       for (uint8_t i = 0; i < 16; i++) {
@@ -3595,19 +3339,11 @@ void BMS_COMM_CODE( void * pvParameters ) {
           alarmNo++;
         }
       }
-
       if (alarmNo != 0) {
         // SleepCounter = 0;
       }
 
       //Serial.println("ALARMS ENDED");
-
-      //EQUAL[IZER2
-
-
-
-
-
 
       //Energy Calculations..........
 
@@ -6472,8 +6208,8 @@ void loop() {
   Serial.print(TimeString);
   Serial.print("Date:");
   Serial.print(DateString);
-//  Serial.print("BMS_COUNTER:");
-//  Serial.print(bmsCounter);
+  //  Serial.print("BMS_COUNTER:");
+  //  Serial.print(bmsCounter);
   Serial.print("RTC_YEAR:");
   Serial.print((String(rtc.years).substring(2)).toInt());
   Serial.print("RTC_MONTH:");
@@ -7267,11 +7003,7 @@ void getBatteryParameters() {
           }
           //Serial.println("CANBUS END");
 
-          //          Serial.println("cumilative_charge:");
-          //          Serial.println(String(BMS.cumilative_charge));
-          //
-          //          Serial.println("cumilative_discharge:");
-          //          Serial.println(String(BMS.cumilative_discharge));
+
 
 
           if (BMS.cumilative_charge != 0) {
@@ -7282,13 +7014,6 @@ void getBatteryParameters() {
             PreChargeEnergy = ChargeEnergy;
             PreDischargeEnergy = DischargeEnergy;
 
-            //            Serial.println("");
-            //            Serial.println("start");
-            //            Serial.print("PreChargeEnergy:");
-            //            Serial.println(PreChargeEnergy);
-            //
-            //            Serial.print("PreDischargeEnergy:");
-            //            Serial.println(PreDischargeEnergy);
 
 
             ChargeEnergy = BMS.cumilative_charge  * 0.001 * NominalVoltage;
@@ -7328,14 +7053,6 @@ void getBatteryParameters() {
             }
 
 
-            //            HourlyDischargeEnergy = 1+ HourlyDischargeEnergy;
-
-
-            //            Serial.print("Hourly Discharge Energy:");
-            //            Serial.println(HourlyDischargeEnergy);
-            //
-            //            Serial.println("end");
-            //            Serial.println("");
 
           }
           break;
@@ -7360,23 +7077,11 @@ void getBatteryParameters() {
           BMS_recieve(0x51);
           delay(10);
 
-          //          Serial.println("CellNumber1");
-          //          Serial.println(String(BMS.board1cellnum));
-          //
-          //
-          //          Serial.println("CellNumber2");
-          //          Serial.println(String(BMS.board2cellnum));
           if (!SimMode) {
             ReadCellMod = BMS.board1cellnum + BMS.board2cellnum;
           }
-          //          Serial.println("CellMod:" + String(ReadCellMod));
-          //  NominalVoltage = BMS.rated_volt * 0.001 * ReadCellMod;
 
-          //          Serial.println("rated cell voltage:" + String(BMS.rated_volt * 0.001));
-          //          Serial.println("nominal voltage:" + String(NominalVoltage));
-          //          Serial.println("rated capacity:" + String(NominalVoltage * BMS.rated_cap * 0.001 * 0.001));
           break;
-
 
         case 11:
           //Serial.println("ID 95 is requested...");
@@ -7443,8 +7148,6 @@ void getBatteryParameters() {
           break;
 
 
-
-
       }
 
       if (buzzerActive) {
@@ -7456,7 +7159,7 @@ void getBatteryParameters() {
 
           }
         }
-               buzzerActive = false;
+        buzzerActive = false;
       }
 
       delay(10);
@@ -7503,14 +7206,6 @@ void getBatteryParameters() {
       Serial.println("Startup finished successfully");
     }
 
-
-
-    //    if (!mute) {
-    //      delay(200);
-    //      buzzer_on();
-    //      delay(200);
-    //      buzzer_off();
-    //    }
   }
 
   else {
@@ -11537,7 +11232,7 @@ void drawDashboard(int SOC, float MaxVolt, float MinVolt, float MaxDiff, float T
       PageFrame.drawString(Languages[indexLanguageArray][15] , 20, 10);
     }
     else {
-      PageFrame.drawString("Terminal Temp" , 20, 10);
+      PageFrame.drawString("Diode Temp" , 20, 10);
     }
 
     PageFrame.setTextColor(TFT_SILVER);
@@ -11547,7 +11242,7 @@ void drawDashboard(int SOC, float MaxVolt, float MinVolt, float MaxDiff, float T
       PageFrame.drawString(Languages[indexLanguageArray][16] , 20, 90);
     }
     else {
-      PageFrame.drawString("Diode Temp" , 20, 90);
+      PageFrame.drawString("Busbar Temp" , 20, 90);
     }
 
     PageFrame.setTextColor(TOLGA_WHITE);
