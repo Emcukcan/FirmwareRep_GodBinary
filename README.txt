@@ -402,6 +402,8 @@ Firmware Version: 3.2.1
 **UPDATE LOG**
 
 - Time & Date bug is resolved
+- Firmware Button is disabled
+
 
 **************************************************************
 
@@ -414,6 +416,19 @@ Firmware Version: 3.2.2
 **UPDATE LOG**
 
 - get_time() related bug is resolved
+
+**************************************************************
+
+
+
+Revision Date: 8/9/2024
+Firmware Version: 3.2.5
+
+
+**UPDATE LOG**
+
+- Container Module Temp reading labels are modified
+
 
 
 
